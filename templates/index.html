@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banco de Horas</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <h1>Banco de Horas - Registrar Horas Extras</h1>
+    <p>As horas serão automaticamente classificadas entre diurnas (06h-22h) e noturnas (22h-06h).</p>
+    
+    <div id="calendar"></div>
+
+    <h2>Registrar Horas Extras</h2>
+    <form id="form-horas">
+        <label for="data">Data:</label>
+        <input type="date" id="data" name="data" required><br>
+
+        <h3>Manhã</h3>
+        <label for="horario-inicio-manha">Horário de Início (Manhã):</label>
+        <input type="time" id="horario-inicio-manha" name="horario-inicio-manha"><br>
+
+        <label for="horario-fim-manha">Horário de Fim (Manhã):</label>
+        <input type="time" id="horario-fim-manha" name="horario-fim-manha"><br>
+
+        <h3>Noite</h3>
+        <label for="horario-inicio-noite">Horário de Início (Noite):</label>
+        <input type="time" id="horario-inicio-noite" name="horario-inicio-noite"><br>
+
+        <label for="horario-fim-noite">Horário de Fim (Noite):</label>
+        <input type="time" id="horario-fim-noite" name="horario-fim-noite"><br>
+
+        <button type="button" onclick="registrarHoras()">Registrar</button>
+    </form>
+
+    <!-- Submenu que mostrará as horas cadastradas -->
+    <div id="submenu-horas" class="submenu">
+        <h2>Horas Cadastradas</h2>
+        <ul id="lista-horas"></ul>
+    </div>
+
+    <button onclick="baixarRelatorio()">Baixar Relatório</button>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
